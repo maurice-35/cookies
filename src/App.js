@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react'
 
-function App() {
+const App = () => {
+  // A variable called times that starts at 0
+  // A function called setTimes that updates times
+  const [times, setTimes] = useState(0);
+
+  const handleClick = (event) => {
+    event.preventDefault();
+    let newNumber = times +1;
+    setTimes(newNumber)
+  }
+
   return (
-    <div className="App">
+    <div className="Cookie">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>You have clicked {times} cookie{times > 1 ? "s" : ""}</h1>
+        Click to adds
+        <button id="cookie-image" onClick={handleClick}>
+          <img src="https://res.cloudinary.com/doe5zwesw/image/upload/v1661953725/cookie_dp7lsv.png" alt="cookie"
+
+          />
+        </button>
       </header>
+      <div className="buttons">
+        <div><button>10</button></div>
+        <div><button>20</button></div>
+        <div><button>30</button></div>
+      </div>
     </div>
   );
 }
