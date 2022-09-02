@@ -1,3 +1,7 @@
+section {
+  display: flex;
+  justify-content:center;
+}
 
 .App-header {
   background-color: #282c34;
@@ -10,11 +14,12 @@
 }
 
 img {
-  width: 100px;
+  width: 200px;
 }
 
 #cookie-image {
-  width: 200px;
+  width: 400px;
+  height: 300px;
 }
 
 .buttons {
