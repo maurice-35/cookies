@@ -17,23 +17,35 @@ const App = () => {
   const handleClickTen = (event) => {
     event.preventDefault();
     let tenRemovedCookies = times - 10;
+    if(times - 10 < 1) {
+      alert('Invalid! Please buy more cookies.')
+    } else {
     setRemoveTenCookies()
     setTimes(tenRemovedCookies)
   }
+}
 
   const handleClickTwenty = (event) => {
     event.preventDefault();
     let twentyRemovedCookies = times - 20;
+    if(times - 20 < 1) {
+      alert('Invalid! Please buy more cookies.')
+    } else {
     setRemoveTwentyCookies()
     setTimes(twentyRemovedCookies)
   }
+}
 
   const handleClickThirty = (event) => {
     event.preventDefault();
     let thirtyRemovedCookies = times - 30;
+    if(times - 30 < 1) {
+      alert('Invalid! Please buy more cookies.')
+    } else {
     setRemoveThirtyCookies()
     setTimes(thirtyRemovedCookies)
   }
+}
 
   return (
     <div className="Cookie">
@@ -55,4 +67,5 @@ const App = () => {
 }
 
 export default App;
+
 
