@@ -1,17 +1,17 @@
-import { useState } from 'react'
+import { useState } from 'react';
 
 const App = () => {
   // A variable called times that starts at 0
   // A function called setTimes that updates times
   const [times, setTimes] = useState(0);
-  const [removeTenCookies, setRemoveTenCookies] = useState(0)
-  const [removeTwentyCookies, setRemoveTwentyCookies] = useState(0)
-  const [removeThirtyCookies, setRemoveThirtyCookies] = useState(0)
+  const [removeTenCookies, setRemoveTenCookies] = useState(0);
+  const [removeTwentyCookies, setRemoveTwentyCookies] = useState(0);
+  const [removeThirtyCookies, setRemoveThirtyCookies] = useState(0);
 
   const handleClick = (event) => {
     event.preventDefault();
     let newNumber = times + 1;
-    setTimes(newNumber)
+    setTimes(newNumber);
   }
 
   const handleClickTen = (event) => {
@@ -20,9 +20,9 @@ const App = () => {
     if(times - 10 < 1) {
       alert('Invalid! Please buy more cookies.')
     } else {
-    setRemoveTenCookies()
-    setTimes(tenRemovedCookies)
-  }
+    setRemoveTenCookies();
+    setTimes(tenRemovedCookies);
+  };
 }
 
   const handleClickTwenty = (event) => {
@@ -31,9 +31,9 @@ const App = () => {
     if(times - 20 < 1) {
       alert('Invalid! Please buy more cookies.')
     } else {
-    setRemoveTwentyCookies()
-    setTimes(twentyRemovedCookies)
-  }
+    setRemoveTwentyCookies();
+    setTimes(twentyRemovedCookies);
+  };
 }
 
   const handleClickThirty = (event) => {
@@ -42,9 +42,9 @@ const App = () => {
     if(times - 30 < 1) {
       alert('Invalid! Please buy more cookies.')
     } else {
-    setRemoveThirtyCookies()
-    setTimes(thirtyRemovedCookies)
-  }
+    setRemoveThirtyCookies();
+    setTimes(thirtyRemovedCookies);
+  };
 }
 
   return (
