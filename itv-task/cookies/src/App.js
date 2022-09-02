@@ -4,7 +4,9 @@ const App = () => {
   // A variable called times that starts at 0
   // A function called setTimes that updates times
   const [times, setTimes] = useState(0);
-  const [removeCookies, setRemoveCookies] = useState(0)
+  const [removeTenCookies, setRemoveTenCookies] = useState(0)
+  const [removeTwentyCookies, setRemoveTwentyCookies] = useState(0)
+  const [removeThirtyCookies, setRemoveThirtyCookies] = useState(0)
 
   const handleClick = (event) => {
     event.preventDefault();
@@ -12,11 +14,25 @@ const App = () => {
     setTimes(newNumber)
   }
 
-  const handleClickedCookies = (event) => {
+  const handleClickTen = (event) => {
     event.preventDefault();
-    let cookiesRemoved = times - 10;
-    setRemoveCookies()
-    setTimes(cookiesRemoved)
+    let tenRemovedCookies = times - 10;
+    setRemoveTenCookies()
+    setTimes(tenRemovedCookies)
+  }
+
+  const handleClickTwenty = (event) => {
+    event.preventDefault();
+    let twentyRemovedCookies = times - 20;
+    setRemoveTwentyCookies()
+    setTimes(twentyRemovedCookies)
+  }
+
+  const handleClickThirty = (event) => {
+    event.preventDefault();
+    let thirtyRemovedCookies = times - 30;
+    setRemoveThirtyCookies()
+    setTimes(thirtyRemovedCookies)
   }
 
   return (
@@ -30,12 +46,13 @@ const App = () => {
         </button>
       </header>
       <div className="buttons">
-        <div><button onClick={handleClickedCookies} {...removeCookies}>10</button></div>
-        <div><button>20</button></div>
-        <div><button>30</button></div>
+        <div><button onClick={handleClickTen} {...removeTenCookies}>10</button></div>
+        <div><button onClick={handleClickTwenty} {...removeTwentyCookies}>20</button></div>
+        <div><button onClick={handleClickThirty} {...removeThirtyCookies}>30</button></div>
       </div>
     </div>
   );
 }
 
 export default App;
+
