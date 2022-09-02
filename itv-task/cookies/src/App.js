@@ -51,7 +51,7 @@ const App = () => {
     <div className="Cookie">
       <header className="App-header">
         <h1>You have clicked {times} cookie{times > 1 ? "s" : ""}</h1>
-        Click to adds
+        Click to add cookies
         <button id="cookie-image" onClick={handleClick}>
           <img src="https://res.cloudinary.com/doe5zwesw/image/upload/v1661953725/cookie_dp7lsv.png" alt="cookie"
           />
