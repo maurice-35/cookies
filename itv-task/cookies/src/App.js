@@ -16,8 +16,8 @@ const App = () => {
 
   const handleClickTen = (event) => {
     event.preventDefault();
-    let tenRemovedCookies = times - 10;
-    if (times - 10 < 1) {
+    const tenRemovedCookies = times - 10;
+    if (times - 10 < 0) {
       alert('Invalid! Please buy more cookies.')
     } else {
       setRemoveTenCookies();
@@ -28,7 +28,7 @@ const App = () => {
   const handleClickTwenty = (event) => {
     event.preventDefault();
     let twentyRemovedCookies = times - 20;
-    if (times - 20 < 1) {
+    if (times - 20 < 0) {
       alert('Invalid! Please buy more cookies.')
     } else {
       setRemoveTwentyCookies();
@@ -39,7 +39,7 @@ const App = () => {
   const handleClickThirty = (event) => {
     event.preventDefault();
     let thirtyRemovedCookies = times - 30;
-    if (times - 30 < 1) {
+    if (times - 30 < 0) {
       alert('Invalid! Please buy more cookies.')
     } else {
       setRemoveThirtyCookies();
@@ -48,22 +48,46 @@ const App = () => {
   }
 
   return (
-    <section>
-      <div className="Cookie">
-        <header className="App-header">
-          <h1>You have clicked {times} cookie{times > 1 ? "s" : ""}</h1>
-          Click to add cookies
-          <button id="cookie-image" onClick={handleClick}>
-            <img src="https://res.cloudinary.com/doe5zwesw/image/upload/v1661953725/cookie_dp7lsv.png" alt="cookie"
-            />
-          </button>
-        </header>
-        <div className="buttons">
-          <div><button onClick={handleClickTen} {...removeTenCookies}>10</button></div>
-          <div><button onClick={handleClickTwenty} {...removeTwentyCookies}>20</button></div>
-          <div><button onClick={handleClickThirty} {...removeThirtyCookies}>30</button></div>
+    <section className="containers">
+      <section className="container1">
+        <div className="Cookie">
+          <header className="App-header">
+            <h1>You have clicked {times} cookie{times > 1 ? "s" : ""}</h1>
+            <p>Click to add cookies</p>
+            <div className="image">
+              <button id="cookie-image" onClick={handleClick}>
+                <img src="https://thumbs.gfycat.com/BiodegradableBlueClumber.webp" alt="cookie"
+                />
+              </button>
+            </div>
+          </header>
+          <div className="buttons">
+            <div><button onClick={handleClickTen} {...removeTenCookies}>10</button></div>
+            <div><button onClick={handleClickTwenty} {...removeTwentyCookies}>20</button></div>
+            <div><button onClick={handleClickThirty} {...removeThirtyCookies}>30</button></div>
+          </div>
         </div>
-      </div>
+      </section>
+      <section className="container2">
+        <div className="Cookie">
+          <header className="App-header">
+            <div className="app-section2">
+              <img src="https://images.pexels.com/photos/531880/pexels-photo-531880.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="background"
+              />
+            </div>
+          </header>
+        </div>
+      </section>
+      <section className="container3">
+        <div className="Cookie">
+          <header className="App-header">
+            <div className="app-section3">
+              <img src="https://images.pexels.com/photos/531880/pexels-photo-531880.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="background"
+              />
+            </div>
+          </header>
+        </div>
+      </section>
     </section>
   );
 }
