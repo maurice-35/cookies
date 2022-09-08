@@ -1,53 +1,20 @@
-import React, { useState } from 'react';
-
+import React, { useState, useEffect } from 'react'
 
 const App = () => {
-
   // A variable called times that starts at 0
   // A function called setTimes that updates times
+  const [cookies, setCookies] = useState(0);
+  const [helpers, setHelpers] = useState(0);
 
-  const [times, setTimes] = useState(0);
-  const [removeTenCookies, setRemoveTenCookies] = useState(0);
-  const [removeTwentyCookies, setRemoveTwentyCookies] = useState(0);
-  const [removeThirtyCookies, setRemoveThirtyCookies] = useState(0);
 
-  const handleClick = (event) => {
-    event.preventDefault();
-    let newNumber = times + 1;
-    setTimes(newNumber);
-  }
-
-  const handleClickTen = (event) => {
-    event.preventDefault();
-    const tenRemovedCookies = times - 10;
-    if (times - 10 < 0) {
+  const handleBuy = (price) => {
+    if (cookies - price < 0) {
       alert('Invalid! Please buy more cookies.')
     } else {
-      setRemoveTenCookies();
-      setTimes(tenRemovedCookies);
-    };
-  }
-
-  const handleClickTwenty = (event) => {
-    event.preventDefault();
-    let twentyRemovedCookies = times - 20;
-    if (times - 20 < 0) {
-      alert('Invalid! Please buy more cookies.')
-    } else {
-      setRemoveTwentyCookies();
-      setTimes(twentyRemovedCookies);
-    };
-  }
-
-  const handleClickThirty = (event) => {
-    event.preventDefault();
-    let thirtyRemovedCookies = times - 30;
-    if (times - 30 < 0) {
-      alert('Invalid! Please buy more cookies.')
-    } else {
-      setRemoveThirtyCookies();
-      setTimes(thirtyRemovedCookies);
-    };
+      console.log("you bought a help");
+      setHelpers(helpers + price);
+      setCookies(cookies - price);
+    }
   }
 
 
@@ -56,19 +23,19 @@ const App = () => {
       <section className="container1">
         <div className="Cookie">
           <header className="App-header">
-            <h1>You have clicked {times} cookie{times > 1 ? "s" : ""}</h1>
-            <p>Click to add cookies</p>
+            <h1>You have clicked {cookies} cookie{cookies > 1 ? "s" : ""}</h1>
+            <p className="helpers">You have<span><strong>{helpers}</strong></span>helpers</p>
             <div className="image">
-              <button id="cookie-image" onClick={handleClick}>
+              <button id="cookie-image" onClick={() => setCookies(cookies + 1)}>
                 <img src="https://thumbs.gfycat.com/BiodegradableBlueClumber.webp" alt="cookie"
                 />
               </button>
             </div>
           </header>
           <div className="buttons">
-            <div><button onClick={handleClickTen} {...removeTenCookies}>10</button></div>
-            <div><button onClick={handleClickTwenty} {...removeTwentyCookies}>20</button></div>
-            <div><button onClick={handleClickThirty} {...removeThirtyCookies}>30</button></div>
+            <div><button onClick={() => handleBuy(10)}>10</button></div>
+            <div><button onClick={() => handleBuy(20)}>20</button></div>
+            <div><button onClick={() => handleBuy(30)}>30</button></div>
           </div>
         </div>
       </section>
