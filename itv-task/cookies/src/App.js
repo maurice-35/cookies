@@ -1,8 +1,11 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
+
 
 const App = () => {
+
   // A variable called times that starts at 0
   // A function called setTimes that updates times
+
   const [times, setTimes] = useState(0);
   const [removeTenCookies, setRemoveTenCookies] = useState(0);
   const [removeTwentyCookies, setRemoveTwentyCookies] = useState(0);
@@ -46,6 +49,7 @@ const App = () => {
       setTimes(thirtyRemovedCookies);
     };
   }
+
 
   return (
     <section className="containers">
