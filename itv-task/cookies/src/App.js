@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
+import HelpersButtons from "./components/HelpersButtons";
 
 const App = () => {
-  // A variable called times that starts at 0
-  // A function called setTimes that updates times
+  // A variable called cookies that starts at 0
+  // A function called setCookies that updates cookies
   const [cookies, setCookies] = useState(0);
   const [helpers, setHelpers] = useState(0);
 
@@ -20,6 +21,7 @@ const App = () => {
     for (let i = 0; i < helpers; i++) {
       string = string + "🖐";
     }
+
     return string;
   };
 
@@ -57,21 +59,21 @@ const App = () => {
             </div>
           </header>
           <div className="buttons">
-            <div>
-              <button disabled={cookies < 1} onClick={() => handleBuy(1)}>
-                1
-              </button>
-            </div>
-            <div>
-              <button disabled={cookies < 2} onClick={() => handleBuy(2)}>
-                2
-              </button>
-            </div>
-            <div>
-              <button disabled={cookies < 3} onClick={() => handleBuy(3)}>
-                3
-              </button>
-            </div>
+            <HelpersButtons
+              handleClick={handleBuy}
+              cookies={cookies}
+              price={1}
+            />
+            <HelpersButtons
+              handleClick={handleBuy}
+              cookies={cookies}
+              price={2}
+            />
+            <HelpersButtons
+              handleClick={handleBuy}
+              cookies={cookies}
+              price={3}
+            />
           </div>
         </div>
       </section>
