@@ -19,7 +19,7 @@ const App = () => {
   const getHands = () => {
     let string = "";
     for (let i = 0; i < helpers; i++) {
-      string = string + "🖐";
+      string = string + "🍪";
     }
 
     return string;
@@ -89,25 +89,41 @@ const App = () => {
             {helpers >= 100 && (
               <strong>
                 <span role="img" aria-label="emoji" alt="thumb-up">
-                  👍🏾
-                </span>{" "}
+                  👍🏾{" "}
+                </span>
                 Well Done! Keep On!
               </strong>
             )}
             {helpers >= 200 && (
               <strong>
                 <span role="img" aria-label="emoji" alt="hand-shake">
-                  🤝
-                </span>{" "}
+                  👏🏽{" "}
+                </span>
                 Curious Tycoon! Keep On!
               </strong>
             )}
             {helpers >= 300 && (
               <strong>
                 <span role="img" aria-label="emoji" alt="power">
-                  🦾
-                </span>{" "}
+                  👊🏻{" "}
+                </span>
                 Brave Shark! Keep On!
+              </strong>
+            )}
+            {helpers >= 400 && (
+              <strong>
+                <span role="img" aria-label="emoji" alt="thumb-up">
+                  🤝{" "}
+                </span>
+                Motivated Explorer! Keep On!
+              </strong>
+            )}
+            {helpers >= 500 && (
+              <strong>
+                <span role="img" aria-label="emoji" alt="thumb-up">
+                  🦾{" "}
+                </span>
+                Skilled Leopard! Keep On!
               </strong>
             )}
           </header>
