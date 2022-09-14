@@ -2,10 +2,9 @@ import React, { useState, useEffect } from "react";
 import HelpersButtons from "./components/HelpersButtons";
 
 const App = () => {
-  // A variable called cookies that starts at 0
-  // A function called setCookies that updates cookies
   const [cookies, setCookies] = useState(0);
   const [helpers, setHelpers] = useState(0);
+  const [tickets, setTickets] = useState(0);
 
   const handleBuy = (price) => {
     if (cookies - price < 0) {
@@ -21,14 +20,18 @@ const App = () => {
     for (let i = 0; i < helpers; i++) {
       string = string + "🍪";
     }
-
     return string;
+  };
+
+  const handleTickets = () => {
+    setTickets(Math.floor(helpers / 100));
   };
 
   useEffect(() => {
     const add = setInterval(() => {
       setCookies(cookies + helpers);
     }, 1000);
+    handleTickets();
     return () => clearInterval(add);
   }, [cookies, helpers]);
 
@@ -45,9 +48,9 @@ const App = () => {
             <p className="helpers">
               You have
               <span>
-                <strong>{helpers}</strong>
+                <strong> {helpers} </strong>
               </span>
-              helpers
+              helper{helpers > 1 ? "s" : ""}
             </p>
             <div className="image">
               <button id="cookie-image" onClick={() => setCookies(cookies + 1)}>
@@ -138,6 +141,9 @@ const App = () => {
                 alt="background"
               />
             </div>
+            <h2>
+              You have <span> {tickets}</span> ticket{tickets > 1 ? "s" : ""}
+            </h2>
           </header>
         </div>
       </section>
