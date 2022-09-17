@@ -1,22 +1,32 @@
 body {
-  background-color: #044f5b
+  background-color: #044f5b;
+}
+
+#title {
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
 }
 
 .containers {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  border-color:  brown;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-color: brown;
 }
 
 .App-header {
   background-color: #282c34;
-  min-height: 80vh;
-  display: grid;
-  color: white;
+  color: lightcoral;
 }
 
-h1, p {
+h1,
+p,
+h2 {
   text-align: center;
+  text-transform: capitalize;
+  font-weight: bold;
 }
 
 .app-section2 {
@@ -26,11 +36,10 @@ h1, p {
 .container2 {
   border: 15px solid #821a05a8;
   background-color: #196fb6;
-  width: 500px;
 }
 
 img {
-  width: 200px;
+  max-width: 200px;
   transition: repeat(0.1s);
 }
 
@@ -44,16 +53,18 @@ img {
 }
 
 button:hover img {
-  animation: beat .65s infinite;
+  animation: beat 0.65s infinite;
 }
 
 @keyframes beat {
-  to {transform: scale(1.4)};
+  to {
+    transform: scale(1.1);
+  }
 }
 
 #cookie-image {
-  width: 400px;
-  height: 300px;
+  max-width: 400px;
+  max-height: 300px;
   background-color: #821a05;
 }
 
@@ -64,36 +75,69 @@ button:hover img {
 }
 
 button {
-  height: 100px;
-  width: 100px;
+  max-height: 100px;
+  max-width: 100px;
   font-size: 20px;
   cursor: pointer;
-  border-color:  #821a05;
+  border-color: #821a05;
 }
 
 button:hover {
-  background-color:  #a9361f;
+  background-color: #a9361f;
+}
+
+#butt {
+  width: 80px;
+  height: 80px;
 }
 
 .helpers {
   font-size: 20px;
 }
 
-span, strong {
+span,
+strong {
   color: rgb(19, 221, 19);
   font-size: 20px;
   text-align: center;
+  font-family: "Courgette", cursive;
 }
 
-p {
+p,
+h2 {
   color: lightcoral;
   font-size: 15px;
-  letter-spacing: 1px;
 }
 
 h2 {
-  text-align: center;
-  color: lightcoral;
+  font-size: 20px;
 }
-er-spacing: 1px;
+
+@media (max-width: 600px) {
+  .App-header {
+    display: grid;
+  }
+
+  img {
+    max-width: 100px;
+  }
+
+  #butt {
+    width: 40px;
+    height: 40px;
+  }
+
+  .helpers,
+  p,
+  h1,
+  h2 {
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  strong,
+  span {
+    font-size: 15px;
+  }
 }
+
