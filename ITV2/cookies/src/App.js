@@ -101,6 +101,12 @@ const App = () => {
                     👍🏾{" "}
                   </span>
                   Well Done! Keep On!
+                  <span>
+                    <img
+                      src="https://acegif.com/wp-content/uploads/gif/confetti-31.gif"
+                      alt="celebrate"
+                    />
+                  </span>
                 </strong>
               )}
               {helpers >= 200 && (
@@ -109,6 +115,12 @@ const App = () => {
                     👏🏽{" "}
                   </span>
                   Curious Tycoon! Keep On!
+                  <span>
+                    <img
+                      src="https://www.phenomenex.com/webimage/confetti-gif-transparent.gif"
+                      alt="celebrate"
+                    />
+                  </span>
                 </strong>
               )}
               {helpers >= 300 && (
@@ -117,6 +129,12 @@ const App = () => {
                     👊🏻{" "}
                   </span>
                   Brave Shark! Keep On!
+                  <span>
+                    <img
+                      src="https://i.pinimg.com/originals/11/81/61/1181613912e1c3f47fdf1c5ca3e0264b.gif"
+                      alt="celebrate"
+                    />
+                  </span>
                 </strong>
               )}
               {helpers >= 400 && (
@@ -125,6 +143,12 @@ const App = () => {
                     🤝{" "}
                   </span>
                   Motivated Explorer! Keep On!
+                  <span>
+                    <img
+                      src="https://cliply.co/wp-content/uploads/2019/02/371812620_FIREWORKS_400.gif"
+                      alt="celebrate"
+                    />
+                  </span>
                 </strong>
               )}
               {helpers >= 500 && (
@@ -165,4 +189,3 @@ const App = () => {
 };
 
 export default App;
-
